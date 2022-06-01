@@ -1,6 +1,9 @@
 <script setup>
 import LastActivity from "../components/lastActivity.vue";
 import ProgressXP from "../components/progressXp.vue";
+import { ref } from "vue";
+
+const username = ref("gukka");
 </script>
 <template>
   <body>
