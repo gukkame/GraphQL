@@ -15,7 +15,7 @@ import ProgressXP from "../components/progressXp.vue";
       <form @submit.prevent="submitUsername()" class="searchBar">
         <div>
           <input
-            v-model="customProperty"
+            v-model="modelValue"
             class="searchBarInp"
             type="text"
             placeholder="Search User..."
@@ -69,22 +69,16 @@ export default {
       transactions: [],
     };
   },
-  computed: {
-    customProperty: {
-      get() {
-        return this.displayUserName;
-      },
-      set(v) {
-        this.displayUserName = v;
-      },
-    },
-  },
+  watch: {
+   modelValue: function(val) {
+   console.log('!!! model value changed ', val);
+ },
 
   methods: {
     async submitUsername() {
       this.lvl = 0;
       this.xptotal = 0;
-      // this.displayUserName = this.username;
+      this.displayUserName = this.username;
       this.username = "";
 
       const endpoint = "https://01.kood.tech/api/graphql-engine/v1/graphql";
