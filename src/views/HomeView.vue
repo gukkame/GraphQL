@@ -317,7 +317,7 @@ export default {
           }
         });
       });
-      console.log("Last activity data", this.lastActivity);
+      // console.log("Last activity data", this.lastActivity);
     },
 
     getTaskXp(progress, transactions) {
