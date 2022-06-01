@@ -1,9 +1,6 @@
 <script setup>
 import LastActivity from "../components/lastActivity.vue";
 import ProgressXP from "../components/progressXp.vue";
-import { ref } from "vue";
-
-const username = ref("gukka");
 </script>
 <template>
   <body>
@@ -18,7 +15,7 @@ const username = ref("gukka");
       <form @submit.prevent="submitUsername()" class="searchBar">
         <div>
           <input
-            v-model="username"
+            v-model="customProperty"
             class="searchBarInp"
             type="text"
             placeholder="Search User..."
@@ -72,12 +69,22 @@ export default {
       transactions: [],
     };
   },
+  computed: {
+    customProperty: {
+      get() {
+        return this.displayUserName;
+      },
+      set(v) {
+        this.displayUserName = v;
+      },
+    },
+  },
 
   methods: {
     async submitUsername() {
       this.lvl = 0;
       this.xptotal = 0;
-      this.displayUserName = this.username;
+      // this.displayUserName = this.username;
       this.username = "";
 
       const endpoint = "https://01.kood.tech/api/graphql-engine/v1/graphql";
