@@ -26,12 +26,11 @@ import ProgressXP from "../components/progressXp.vue";
 
       <div class="container" v-if="msg.length == 0">
         <div class="profile">
-         
           <h2>{{ displayUserName }}</h2>
           <h3>{{ lvl }} Level</h3>
           <h3>{{ xptotal }} XP total</h3>
         </div>
-          <h1><strong> Last Activity</strong></h1>
+        <h1><strong> Last Activity</strong></h1>
         <div class="lastActivity">
           <LastActivity :lastActivity="lastActivity" />
         </div>
@@ -39,7 +38,6 @@ import ProgressXP from "../components/progressXp.vue";
         <div class="progressTimeXp">
           <ProgressXP :progressXp="lastActivity" />
         </div>
-
       </div>
       <div v-else-if="msg == 'N'"></div>
       <div v-else>
@@ -58,7 +56,7 @@ export default {
   },
   data() {
     return {
-      username: "nimi25820",
+      username: "",
       displayUserName: "",
       data: [],
       msg: "N",
@@ -276,7 +274,7 @@ export default {
           }
         });
         if (i == 0) {
-          xp.push([obj.objectId, obj.amount]); 
+          xp.push([obj.objectId, obj.amount]);
         }
       });
       return xp;
