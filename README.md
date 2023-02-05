@@ -1,3 +1,8 @@
+# GraphQL
+
+Displays student xp in different graphs 
+
+More info: `https://01.kood.tech/git/root/public/src/branch/master/subjects/graphql`
 
 ## How to run local
 
@@ -6,4 +11,3 @@
 - Run Vuejs server using `npm run dev`
 - Open Vue server or `http://localhost:3000/` to see GraphQL!
 
-Made by Gukka!
